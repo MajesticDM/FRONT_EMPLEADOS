@@ -1,0 +1,54 @@
+<div mat-dialog-title style="margin: 10px; text-align: center">
+  <h1>Formulario de empleado</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <span>Puesto laboral</span>
+    </div>
+    <div class="row">
+      <mat-form-field>
+
+        <mat-label>Sub area</mat-label>
+        <mat-select disableRipple formControlName="idxSubArea" required>
+          <mat-option *ngFor="let sub of subAreas" [value]="sub.idSubArea"
+            >{{ sub.subArea }}
+          </mat-option>
+        </mat-select>
+        
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Tipo de documento</mat-label>
+        <mat-select disableRipple formControlName="idxTipoDocumento" required>
+          <mat-option *ngFor="let opcion of opciones" [value]="opcion.idTipoDocumento"
+            >{{ opcion.tipoDocumento }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <span>Datos personales</span>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Documento</mat-label>
+        <input matInput formControlName="documento" [required]="true"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombres" [required]="true"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="apellidos" [required]="true"/>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button color="primary" type="submit">
+      {{ data ? "Editar" : "Guardar" }}
+    </button>
+  </div>
+</form>

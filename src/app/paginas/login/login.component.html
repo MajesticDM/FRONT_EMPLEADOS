@@ -1,0 +1,16 @@
+
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form *ngIf="!Registrado">
+    <h3>Bienvenidos</h3>
+  
+    <label for="username">Usuario</label>
+    <input type="text" name ="userName" [(ngModel)]="loginObj.usuario" placeholder="Usuario" id="username">
+  
+    <label for="password">Contraseña</label>
+    <input type="password" name ="password" [(ngModel)]="loginObj.contrasena" placeholder="Contraseña" id="password">
+  
+    <button style="color: black" (click)="onLogin()">Ingresar</button>
+  </form>
