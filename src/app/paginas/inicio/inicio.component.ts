@@ -45,7 +45,7 @@ export class InicioComponent implements OnInit {
   }
   onLogOut(){
     localStorage.removeItem("token")
-    this.router.navigateByUrl("/")
+    this.router.navigateByUrl("")
   }
   openAddEditEmpForm() {
     const dialogRef = this._dialog.open(EmpleadoAddEditComponent);
