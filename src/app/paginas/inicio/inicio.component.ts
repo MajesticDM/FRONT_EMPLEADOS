@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EmpleadoAddEditComponent } from 'src/app/empleado-add-edit/empleado-add-edit.component';
-import { EmpleadosService } from 'src/app/servicios/empleados.service';
+import { EmpleadoAddEditComponent } from 'src/app/modulos/empleado-add-edit/empleado-add-edit.component';
+import { EmpleadosService } from 'src/app/componentes/servicios/empleados.service';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,8 +9,8 @@ import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { CoreService } from 'src/app/core/core.service';
+import { CoreService } from 'src/app/componentes/core/core.service';
+import { core } from '@angular/compiler';
 
 
 @Component({
@@ -66,7 +66,7 @@ export class InicioComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
       },
       error: (error) => {
-        console.log("Error: "+error.status+", No autorizado a ingresar");
+        this._coreService.openSnackBar('Ocurrió un error.');
       },
     });
   }

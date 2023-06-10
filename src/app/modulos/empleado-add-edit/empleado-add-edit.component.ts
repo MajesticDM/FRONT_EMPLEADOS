@@ -11,9 +11,9 @@ import { NgFor } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { EmpleadosService } from '../servicios/empleados.service';
+import { EmpleadosService } from '../../componentes/servicios/empleados.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CoreService } from '../core/core.service';
+import { CoreService } from '../../componentes/core/core.service';
 
 @Component({
   selector: 'app-empleado-add-edit',
